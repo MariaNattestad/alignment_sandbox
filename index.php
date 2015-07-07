@@ -93,7 +93,7 @@
      </div>
      <div class="row" >
         <div class="col-lg-14">
-           <form action="" method="post">
+           <form action="#results" method="post">
            <p>
           <div class="input-group input-group-lg">
             <span class="input-group-addon colorful1">Sequence 1</span>
@@ -167,6 +167,7 @@
         </div>
      </div>
      <div class="page-header">
+        <a name="results"></a>
         <h1>Results</h1>
      </div>
      <div class="row">
