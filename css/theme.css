@@ -23,3 +23,8 @@ body {
   word-wrap: break-word;
   
 }
+
+.jumbotron {
+    margin-top:-20px; padding-top:10px;
+    background-color:#6f5400;
+}
