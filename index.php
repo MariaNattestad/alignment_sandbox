@@ -98,7 +98,7 @@
           <div class="input-group input-group-lg">
             <span class="input-group-addon colorful1">Sequence 1</span>
              <input type="text" name="seq1" class="form-control" value = <?php if (!empty($_POST)) {
-             echo strtoupper(escapeshellcmd($_POST['seq1']));} else {echo "GATTTACA";} ?> >
+             echo strtoupper(escapeshellcmd($_POST['seq1']));} else {echo "TGTAGTACCTATTTCAGGAATTTCTATAAACACTCTCACATAAGATGATCTGCAAACTCATCTGAGCTTTGG";} ?> >
         
           </div>
         </p>
@@ -106,7 +106,7 @@
                   <div class="input-group input-group-lg">
                     <span class="input-group-addon colorful1" >Sequence 2</span>
                      <input type="text" name="seq2" class="form-control" value = <?php if (!empty($_POST)) {
-                     echo strtoupper(escapeshellcmd($_POST['seq2']));} else {echo "GATACA";} ?> >
+                     echo strtoupper(escapeshellcmd($_POST['seq2']));} else {echo "TAAAAGAAATAGGGTCTTGCTTTGTCATTTCATTAACATATATAATAAGGCACTTTCCTTAAATGAATATTCTT";} ?> >
                      
                   </div>
               </p>
@@ -115,7 +115,7 @@
               <p>
               <div class="input-group input-group-lg">
                 <span class="input-group-addon colorful2">Match score</span>
-                 <input type="number" name="match" class="form-control" value = <?php if (!empty($_POST)) {
+                 <input type="number" min="0" name="match" class="form-control" value = <?php if (!empty($_POST)) {
                  echo strtoupper(escapeshellcmd($_POST['match']));} else {echo "2";} ?> >
                  
               </div>
@@ -125,7 +125,7 @@
              <p>
                 <div class="input-group input-group-lg">
                   <span class="input-group-addon colorful2">Mismatch penalty</span>
-                   <input type="number" name="mismatch" class="form-control" value = <?php if (!empty($_POST)) {
+                   <input type="number" min="0" name="mismatch" class="form-control" value = <?php if (!empty($_POST)) {
                    echo strtoupper(escapeshellcmd($_POST['mismatch']));} else {echo "1";} ?> >
                   
                 </div>
@@ -133,7 +133,7 @@
        <p>
           <div class="input-group input-group-lg">
             <span class="input-group-addon colorful3">Gap start penalty</span>
-             <input type="number" name="gap_start" class="form-control" value = <?php if (!empty($_POST)) {
+             <input type="number" min="0" name="gap_start" class="form-control" value = <?php if (!empty($_POST)) {
              echo strtoupper(escapeshellcmd($_POST['gap_start']));} else {echo "1";} ?> >
             
           </div>
@@ -141,7 +141,7 @@
        <p>
           <div class="input-group input-group-lg">
             <span class="input-group-addon colorful3">Gap extend penalty</span>
-             <input type="number" name="gap_extend" class="form-control" value = <?php if (!empty($_POST)) {
+             <input type="number" step="1" min="0" name="gap_extend" class="form-control" value = <?php if (!empty($_POST)) {
              echo strtoupper(escapeshellcmd($_POST['gap_extend']));} else {echo "1";} ?> >
              
           </div>
@@ -161,6 +161,7 @@
           <p>
             <input type="checkbox" data-size="large" name="global" data-on-text="Global" data-off-text="Local" value="-global" <?php if (!empty($_POST)) { if (!empty($_POST['global'])) { echo "checked"; };} else { echo "checked";}  ?> >
           </p>
+          <p>Gap decay above 0 must be used with local alignment only</p>
           <button class="btn btn-primary btn-lg" type="submit">Start!</button>
            </form>
         </div>
